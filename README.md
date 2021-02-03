@@ -2256,7 +2256,7 @@ JSON Return:
 **Places API link:** https://maps.googleapis.com/maps/api/place/details/json?place_id=ChIJd_lJIxGaiVQRj0b0YMdZnws&fields=name,rating,formatted_phone_number,price_level,opening_hours&key=AIzaSyA5a1FoKmbmQ1djPh6pRx7oiknBf3ACNOE
 
 JSON Return:
-```
+```JSON
 {
    "html_attributions" : [],
    "result" : {
