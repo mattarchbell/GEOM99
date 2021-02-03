@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tallest Mountains</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5a1FoKmbmQ1djPh6pRx7oiknBf3ACNOE&callback=initMap&libraries=visualization&v=weekly"
+      defer
+    ></script>
+    <style type="text/css">
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+	h1, h3 {
+	text-align: center;
+	}
+	
+    </style>
+
+<script type="text/javascript">
+
+// create location, label, and image link lists for marker creation - to challenge myself
+var locations = [
+ { lat: 63.069, lng: -151.007 },
+ { lat: -32.641, lng: -70.021 },
+ { lat: 43.347, lng: 42.441 },
+ { lat: -3.071, lng: 37.358 },
+ { lat: -78.529, lng: -85.632 },
+ { lat: 27.980, lng: 86.920 },
+ { lat: -36.456, lng: 148.261 },
+  	];
+var labels = ['Denali', 'Aconcagua', 'Elbrus', 'Kilimanjaro', 'Vinson Massif', 'Everest', 'Kosciuszko',
+      	];
+var images = ['Denali.jpg','Aconcagua.jpg','Elbrus.jpg','Kilimanjaro.jpg','VinsonMassif.jpg','Everest.jpg','Kosciuszko.jpg'
+	];
+
+//create map 
+  function initMap() {
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 2,
+    center: {lat: 0, lng: 0},
+    mapTypeId: "satellite",
+  });
+
+    setMarkers(map,locations)
+
+  }
+
+// create markers using locations and labels, and create an image link for use in info window
+
+function setMarkers(map,locations){
+
+      var marker, i
+
+for (i = 0; i < locations.length; i++)
+ {  
+
+var loc = locations[i]
+var tit = labels[i]
+var pic = "<img src='"+images[i]+"' alt='"+images[i]+"' style='width:200px;height:120px;'>"
+
+  var marker = new google.maps.Marker({  
+          map: map, title: tit , position: loc
+        });
+        
+
+// create content for info window and addListener to initiate window on marker click
+
+        var content = "<h3>"+tit+"</h1><div>"+pic+"</div>"
+
+  var infowindow = new google.maps.InfoWindow()
+
+google.maps.event.addListener(marker,'click', (function(marker,content,infowindow){ 
+        return function() {
+           infowindow.setContent(content);
+           infowindow.open(map,marker);
+	   map.setCenter(marker.getPosition())
+        };
+    })(marker,content,infowindow)); 
+
+  }
+  }
+
+  </script>
+ </head>
+ <body>
+  <h1> The Tallest Mountains on Each Continent </h1>
+	<h3>Click on the markers!</h3>
+    <div id="map"></div>
+ </body>
+  </html>
+
