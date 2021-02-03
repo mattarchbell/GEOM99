@@ -19,7 +19,8 @@
 **Directions API link:** https://maps.googleapis.com/maps/api/directions/json?origin=Lindsay-Ontario&destination=Calgary&key=AIzaSyA5a1FoKmbmQ1djPh6pRx7oiknBf3ACNOE
 
 JSON Return:
-'''
+'''JSON
+
 {
    "geocoded_waypoints" : [
       {
