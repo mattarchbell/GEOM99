@@ -15,6 +15,106 @@
 
 **Tutorial 3c:** https://mattarchbell.github.io/GEOM99/Gmaps/tutorial3c.html
 
+**Places API link:** https://maps.googleapis.com/maps/api/place/details/json?place_id=ChIJd_lJIxGaiVQRj0b0YMdZnws&fields=name,rating,formatted_phone_number,price_level,opening_hours&key=AIzaSyA5a1FoKmbmQ1djPh6pRx7oiknBf3ACNOE
+
+JSON Return:
+```JSON
+{
+   "html_attributions" : [],
+   "result" : {
+      "formatted_phone_number" : "(888) 720-3414",
+      "name" : "Tourism Tofino",
+      "obfuscated_type" : [],
+      "opening_hours" : {
+         "open_now" : true,
+         "periods" : [
+            {
+               "close" : {
+                  "day" : 0,
+                  "time" : "1700"
+               },
+               "open" : {
+                  "day" : 0,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : {
+                  "day" : 1,
+                  "time" : "1700"
+               },
+               "open" : {
+                  "day" : 1,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : {
+                  "day" : 2,
+                  "time" : "1700"
+               },
+               "open" : {
+                  "day" : 2,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : {
+                  "day" : 3,
+                  "time" : "1700"
+               },
+               "open" : {
+                  "day" : 3,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : {
+                  "day" : 4,
+                  "time" : "1700"
+               },
+               "open" : {
+                  "day" : 4,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : {
+                  "day" : 5,
+                  "time" : "1700"
+               },
+               "open" : {
+                  "day" : 5,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : {
+                  "day" : 6,
+                  "time" : "1700"
+               },
+               "open" : {
+                  "day" : 6,
+                  "time" : "1000"
+               }
+            }
+         ],
+         "weekday_text" : [
+            "Monday: 10:00 AM – 5:00 PM",
+            "Tuesday: 10:00 AM – 5:00 PM",
+            "Wednesday: 10:00 AM – 5:00 PM",
+            "Thursday: 10:00 AM – 5:00 PM",
+            "Friday: 10:00 AM – 5:00 PM",
+            "Saturday: 10:00 AM – 5:00 PM",
+            "Sunday: 10:00 AM – 5:00 PM"
+         ]
+      },
+      "rating" : 4.5
+   },
+   "status" : "OK"
+}
+```
+
 **Directions API link:** https://maps.googleapis.com/maps/api/directions/json?origin=Lindsay-Ontario&destination=Calgary&key=AIzaSyA5a1FoKmbmQ1djPh6pRx7oiknBf3ACNOE
 
 JSON Return:
@@ -2252,102 +2352,3 @@ JSON Return:
 }
 ```
 
-**Places API link:** https://maps.googleapis.com/maps/api/place/details/json?place_id=ChIJd_lJIxGaiVQRj0b0YMdZnws&fields=name,rating,formatted_phone_number,price_level,opening_hours&key=AIzaSyA5a1FoKmbmQ1djPh6pRx7oiknBf3ACNOE
-
-JSON Return:
-```JSON
-{
-   "html_attributions" : [],
-   "result" : {
-      "formatted_phone_number" : "(888) 720-3414",
-      "name" : "Tourism Tofino",
-      "obfuscated_type" : [],
-      "opening_hours" : {
-         "open_now" : true,
-         "periods" : [
-            {
-               "close" : {
-                  "day" : 0,
-                  "time" : "1700"
-               },
-               "open" : {
-                  "day" : 0,
-                  "time" : "1000"
-               }
-            },
-            {
-               "close" : {
-                  "day" : 1,
-                  "time" : "1700"
-               },
-               "open" : {
-                  "day" : 1,
-                  "time" : "1000"
-               }
-            },
-            {
-               "close" : {
-                  "day" : 2,
-                  "time" : "1700"
-               },
-               "open" : {
-                  "day" : 2,
-                  "time" : "1000"
-               }
-            },
-            {
-               "close" : {
-                  "day" : 3,
-                  "time" : "1700"
-               },
-               "open" : {
-                  "day" : 3,
-                  "time" : "1000"
-               }
-            },
-            {
-               "close" : {
-                  "day" : 4,
-                  "time" : "1700"
-               },
-               "open" : {
-                  "day" : 4,
-                  "time" : "1000"
-               }
-            },
-            {
-               "close" : {
-                  "day" : 5,
-                  "time" : "1700"
-               },
-               "open" : {
-                  "day" : 5,
-                  "time" : "1000"
-               }
-            },
-            {
-               "close" : {
-                  "day" : 6,
-                  "time" : "1700"
-               },
-               "open" : {
-                  "day" : 6,
-                  "time" : "1000"
-               }
-            }
-         ],
-         "weekday_text" : [
-            "Monday: 10:00 AM – 5:00 PM",
-            "Tuesday: 10:00 AM – 5:00 PM",
-            "Wednesday: 10:00 AM – 5:00 PM",
-            "Thursday: 10:00 AM – 5:00 PM",
-            "Friday: 10:00 AM – 5:00 PM",
-            "Saturday: 10:00 AM – 5:00 PM",
-            "Sunday: 10:00 AM – 5:00 PM"
-         ]
-      },
-      "rating" : 4.5
-   },
-   "status" : "OK"
-}
-```
