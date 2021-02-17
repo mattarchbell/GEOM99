@@ -2,9 +2,17 @@
 ## Checklist items for Geom99 are located in this repository
 ## Week 2
 **New empty Layer REST URL:** https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/tree_database1/FeatureServer
+
 **ID URL:**1d51535cbce74bf583164d7a20c32fe1
 
-****
+**ArcGIS JS API tutorial 1:** https://mattarchbell.github.io/GEOM99/tut1.html
+
+**ArcGIS JS API tutorial 1:** https://mattarchbell.github.io/GEOM99/tut2.html
+
+**ArcGIS JS API tutorial 1:** https://mattarchbell.github.io/GEOM99/tut3.html
+
+**ArcGIS JS API with E-bird Downy Woodpecker Observations:** https://mattarchbell.github.io/GEOM99/downyobservations.html
+
 
 ## Week 1
 ### **Option 1:** https://mattarchbell.github.io/GEOM99/option1.html
