@@ -1,0 +1,67 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Downy Woodpecker Observations in Ontario</title>
+  <style>
+    html, body, #viewDiv {
+      padding: 0;
+      margin: 0;
+      height: 100%;
+      width: 100%;
+    }
+  </style>
+  <link rel="stylesheet" href="https://js.arcgis.com/4.18/esri/themes/light/main.css">
+  <script src="https://js.arcgis.com/4.18/"></script>
+
+  <script>
+  require([
+    "esri/config",
+    "esri/Map",
+    "esri/views/MapView",
+
+    "esri/layers/FeatureLayer"
+
+  ], function(esriConfig,Map, MapView, FeatureLayer) {
+
+  esriConfig.apiKey = "AAPKe84e9db5694c438c8249c981f1f21aa6i_h6SNV90v_uNyhPKRnT1zibtqoEFS1Upd6ouYd40MOwQBQ2VYL7wj93QUg_WewM";
+
+  const map = new Map({
+    basemap: "arcgis-imagery"
+  });
+
+  const view = new MapView({
+    container: "viewDiv",
+    map: map,
+    center: [-84.291194, 47.811992],
+    zoom: 6
+  });
+
+// https://developers.arcgis.com/javascript/3/samples/portal_symbols/index.html
+  const DownyRenderer = {
+        "type": "simple",
+        "symbol": {
+          "type": "picture-marker",
+          "url": "https://static.arcgis.com/images/Symbols/NPS/Birding_Wildlife_viewing.png",
+          "width": "18px",
+          "height": "18px"
+        }
+      }
+
+
+//woodpecker observations (points)
+  const DownyObs = new FeatureLayer({
+    url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/DownyObs/FeatureServer",
+    renderer: DownyRenderer
+  });
+
+  map.add(DownyObs);
+
+  });
+</script>
+
+</head>
+<body>
+  <div id="viewDiv"></div>
+</body>
+</html>
