@@ -1,6 +1,7 @@
 # GEOM99
 ### Checklist items for Geom99 are located in this repository
-### **Option 1:** https://mattarchbell.github.io/GEOM99/option1.html
+### Week 1
+## **Option 1:** https://mattarchbell.github.io/GEOM99/option1.html
 **Shark Spotters Map link:** https://mattarchbell.github.io/GEOM99/sharkspotters.html
 
 **Hello World link:** https://mattarchbell.github.io/GEOM99/helloworld.html
