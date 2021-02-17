@@ -459,8 +459,7 @@ JSON Return:
                      },
                      "html_instructions" : "Continue onto \u003cb\u003eTrans-Canada Hwy\u003c/b\u003e/\u003cwbr/\u003e\u003cb\u003eON-11 N\u003c/b\u003e/\u003cwbr/\u003e\u003cb\u003eON-12 N\u003c/b\u003e",
                      "polyline" : {
-                        "points" : "iodoGv{{cNuCRc@B}CTkAJmCRaHj@sAL}AJO@yBJq@@qA@oACq@Ay@CaBImAKiAM}AS}QqC{@MmC_@qEu@"
-                     },
+                        "points" : "iodoGv{{cNuCRc@B}CTkAJmCRaHj@sAL}AJO@yBJq@@qA@oACq@Ay@CaBImAKiAM}AS}QqC{@MmC_@qEu@"},
                      "start_location" : {
                         "lat" : 44.5926911,
                         "lng" : -79.446519
