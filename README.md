@@ -1,7 +1,13 @@
 # GEOM99
-### Checklist items for Geom99 are located in this repository
-### Week 1
-## **Option 1:** https://mattarchbell.github.io/GEOM99/option1.html
+## Checklist items for Geom99 are located in this repository
+## Week 2
+**New empty Layer REST URL:** https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/tree_database1/FeatureServer
+**ID URL:**1d51535cbce74bf583164d7a20c32fe1
+
+****
+
+## Week 1
+### **Option 1:** https://mattarchbell.github.io/GEOM99/option1.html
 **Shark Spotters Map link:** https://mattarchbell.github.io/GEOM99/sharkspotters.html
 
 **Hello World link:** https://mattarchbell.github.io/GEOM99/helloworld.html
