@@ -1,0 +1,105 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Canada Map</title>
+  <style>
+    html, body, #viewDiv {
+      padding: 0;
+      margin: 0;
+      height: 100%;
+      width: 100%;
+    }
+  </style>
+  <link rel="stylesheet" href="https://js.arcgis.com/4.18/esri/themes/light/main.css">
+  <script src="https://js.arcgis.com/4.18/"></script>
+
+  <script>
+  require([
+    "esri/config",
+    "esri/Map",
+    "esri/views/MapView",
+
+    "esri/layers/FeatureLayer"
+
+  ], function(esriConfig,Map, MapView, FeatureLayer) {
+
+  esriConfig.apiKey = "AAPKe84e9db5694c438c8249c981f1f21aa6i_h6SNV90v_uNyhPKRnT1zibtqoEFS1Upd6ouYd40MOwQBQ2VYL7wj93QUg_WewM";
+
+  const map = new Map({
+    basemap: "dark-gray"
+  });
+
+  const view = new MapView({
+    container: "viewDiv",
+    map: map,
+    center: [ -101.944694, 60.085132],
+    zoom: 4
+  });
+
+// https://developers.arcgis.com/javascript/3/samples/portal_symbols/index.html
+
+
+  const popProv = {
+    "title": "Province",
+        "content": "<b>Name (english):</b> {PRENAME}<br><b>Name (french):</b> {PRFNAME}<br>"
+      }
+  
+      const trailheads = new FeatureLayer({
+        url: "https://luna.flemingcollege.ca/arcgis/rest/services/Geom99lab1/marchbelCanada/MapServer",
+        outFields: ["PRENAME","PRFNAME"],
+        popupTemplate: popProv
+      });
+
+      map.add(trailheads);
+
+  function createFillSymbol(value, color) {
+        return {
+          "value": value,
+          "symbol": {
+            "color": color,
+            "type": "simple-fill",
+            "style": "solid",
+            "outline": {
+              "style": "none"
+            }
+          },
+          "label": value
+        };
+      }
+      const openSpacesRenderer = {
+        type: "unique-value",
+        field: "PRNAME",
+        uniqueValueInfos: [
+          createFillSymbol("Ontario", "#149ECE"),
+          createFillSymbol("Newfoundland and Labrador / Terre-Neuve-et-Labrador", "#A7C636"),
+          createFillSymbol("Prince Edward Island / Île-du-Prince-Édouard", "#149ECE"),
+          createFillSymbol("Nova Scotia / Nouvelle-Écosse", "#ED5151"),
+          createFillSymbol("New Brunswick / Nouveau-Brunswick", "#A7C636"),
+          createFillSymbol("Quebec / Québec", "#9E559C"),
+          createFillSymbol("Manitoba", "#9E559C"),
+          createFillSymbol("Saskatchewan", "#A7C636"),
+          createFillSymbol("Alberta", "#9E559C"),
+          createFillSymbol("British Columbia / Colombie-Britannique", "#ED5151"),
+          createFillSymbol("Yukon", "#A7C636"),
+          createFillSymbol("Northwest Territories / Territoires du Nord-Ouest", "#149ECE"),
+          createFillSymbol("Nunavut", "#ED5151"),
+        ]
+      };
+      const openspaces = new FeatureLayer({
+        url: "https://luna.flemingcollege.ca/arcgis/rest/services/Geom99lab1/marchbelCanada/MapServer",
+        renderer: openSpacesRenderer,
+        opacity: 0.2
+      });
+
+      // Add the layer
+      map.add(openspaces,0);
+  });
+</script>
+
+</head>
+<body>
+  <h1>Click on the provinces to learn their names!</h1>
+  <div id="viewDiv"></div>
+</body>
+</html>
